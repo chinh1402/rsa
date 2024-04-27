@@ -1,7 +1,7 @@
 // smaller prime number RSA encryption algorithm
 
 // To use this, here are the rules, you can change originalMessage, prime1, prime2, e as follow
-// 1. originalMessage is an INT, must be smaller than phi_n, for obvious reason: since you're modulo-ing it, you can't get higher values, so can't encrypt higher values
+// 1. originalMessage is an INT, must be smaller than n, for obvious reason: since you're modulo-ing it, you can't get higher values, so can't encrypt higher values
 // 2. prime1 and prime2 must be prime, and maximum 4 digits cause computing power is not enough, im iterating from 1 to phi to find private key
 // 3. The e values is defaulted to the smallest value it can be found in liste (an array); any e value would works fine, change e value on line 29
 // 4. The reason number appearing 5n beacuse it is BigInt. The value of it is 5. So I concatenate using + instead of ,
