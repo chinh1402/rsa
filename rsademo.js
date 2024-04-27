@@ -48,11 +48,6 @@ if (d == 0) {
 }
 console.log("Value of d: " +d+ "")
 
-// (e, n): 
-// encrypting data
-
-// HI: 8,9
-
 console.log("origin Data: ", originalMessage)
 
 const cipherData = BigInt(originalMessage) ** e % modulo_n
