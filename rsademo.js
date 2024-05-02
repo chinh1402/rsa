@@ -6,9 +6,9 @@
 // 3. The e values is defaulted to the smallest value it can be found in liste (an array); any e value would works fine, change e value on line 29
 // 4. The reason number appearing 5n beacuse it is BigInt. The value of it is 5. So I concatenate using + instead of ,
 
-const originalMessage = 60
-const prime1 = BigInt(1033)
-const prime2 = BigInt(3037)
+const originalMessage = 2
+const prime1 = BigInt(2)
+const prime2 = BigInt(7)
 
 const modulo_n = BigInt(prime1*prime2);
 const phi_n = (prime1 - BigInt(1)) * (prime2 - BigInt(1))
@@ -18,14 +18,14 @@ console.log("phi: "+ phi_n)
 const listPrime = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97];
 
 const liste = listPrime.map(item => {
-    if (phi_n % BigInt(item) != 0) {
+    if (phi_n % BigInt(item) != 0 && BigInt(item) < phi_n ) {
         return item;
     }
 }).filter(item => item !== undefined);
 
 console.log("List of e values:", liste.join(", "));
 
-// Assign e value to the first value in the list
+// Default to first value
 const e = BigInt(liste[0])
 
 console.log("Value of e: "+ e)
@@ -36,8 +36,8 @@ console.log("Value of e, n:(" +e, "," + modulo_n+ ")")
 // Private key
 // e*d mod_n = 1
 let d = BigInt(0);
-for (let i = BigInt(1); i< phi_n; i++) {
-    if (e*i % phi_n == 1) {
+for (let i = BigInt(1); i< modulo_n; i++) {
+    if (e*i % phi_n == 1 && i != e) {
         d = i;
         break;
     }
