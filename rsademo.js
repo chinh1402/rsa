@@ -7,7 +7,7 @@
 // 4. The reason number appearing 5n beacuse it is BigInt. The value of it is 5. So I concatenate using + instead of ,
 
 // Uncomment this to assign fixed value for e, the value must be in list of e values
-const e_value = 17
+// const e_value = 17
 
 const originalMessage = 55
 const prime1 = BigInt(31)
